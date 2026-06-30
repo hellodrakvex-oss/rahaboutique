@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import Link from "next/link";
 
 const faqs = [
   {
@@ -83,11 +84,11 @@ export default function FAQPage() {
                 WhatsApp Us
               </button>
             </a>
-            <a href="/contact">
+            <Link href="/contact">
               <button className="border border-foreground/20 px-8 py-3 text-xs uppercase tracking-widest hover:bg-foreground hover:text-white transition-colors">
                 Contact Form
               </button>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

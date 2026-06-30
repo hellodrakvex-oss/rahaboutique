@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { products } from "@/lib/data";
 import { ProductGallery } from "@/components/product/gallery";
 import { ProductActions } from "@/components/product/actions";
+import Link from "next/link";
 
 export function generateStaticParams() {
   return products.map((product) => ({
@@ -27,9 +28,9 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
         
         {/* Breadcrumb */}
         <div className="font-sans text-xs uppercase tracking-widest text-foreground/50 mb-12 flex items-center gap-2">
-          <a href="/" className="hover:text-primary-gold transition-colors">Home</a>
+          <Link href="/" className="hover:text-primary-gold transition-colors">Home</Link>
           <span>/</span>
-          <a href={`/collections/${product.category}`} className="hover:text-primary-gold transition-colors">{product.category}</a>
+          <Link href={`/collections/${product.category}`} className="hover:text-primary-gold transition-colors">{product.category}</Link>
           <span>/</span>
           <span className="text-foreground">{product.name}</span>
         </div>
